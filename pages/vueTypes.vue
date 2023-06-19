@@ -21,16 +21,14 @@ const list = [
   {
     id: 4,
     description: "Item 4",
+    price: 0,
     status: "sold out",
   },
 ];
 
 const myCategory1 = new CategoryItem("type a", "a1", 25, []);
-console.log("myCategory1");
-console.log(typeof myCategory1);
-console.log(myCategory1);
-
 const myCategory2 = new CategoryItem("type b", "b1", 20);
+
 myCategory1.addQuestionItem(
   new QuestionItem("this is question a1", "a1-01", false, 0, [
     new AnswerOption("this is choice a1-01-option1", 0, "a1-01-option1"),
@@ -40,7 +38,6 @@ myCategory1.addQuestionItem(
     new AnswerOption("this is choice a1-01-option5", 4, "a1-01-option5"),
   ])
 );
-console.log(myCategory1);
 
 myCategory1.addQuestionItem(
   new QuestionItem("this is question a2", "a1-02", false, 0, [

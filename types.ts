@@ -3,13 +3,6 @@ import { oneOf } from 'vue-types'
 
 export const statusType = () => oneOf(["available", "sold out", null] as const);
 
-export class Nakada {
-  constructor(firstName: string, lastName: string) {
-    this._firstName = firstName;
-    this._lastName = lastName;
-  }
-}
-
 export class AnswerOption {
   // eslint-disable-next-line no-useless-constructor
   constructor(
@@ -112,17 +105,16 @@ export class CategoryItem {
     return this._questionList;
   }
 
-  set questionList(item: QuestionItem) {
-    if (typeof item !== "undefined") {
+  set questionList(item: QuestionItem[]) {
+    if (typeof item === "undefined") {
       throw new TypeError("item is undefined");
     }
     this._questionList = item;
   }
 
   addQuestionItem(item: QuestionItem) {
-    console.log(item);
-    if (typeof item !== "undefined") {
-      throw new TypeError("item is undefined XXX");
+    if (typeof item === "undefined") {
+      throw new TypeError("item is undefined");
     }
     this._questionList.push(item);
   }
@@ -149,14 +141,14 @@ export class QaList {
   }
 
   set categoryList(item: CategoryItem[]) {
-    if (typeof item !== "undefined") {
+    if (typeof item === "undefined") {
       throw new TypeError("item is undefined");
     }
     this._categoryList = item;
   }
 
   addCategoryList(item: CategoryItem) {
-    if (typeof item !== "undefined") {
+    if (typeof item === "undefined") {
       throw new TypeError("item is undefined");
     }
     this._categoryList.push(item);
