@@ -1,11 +1,9 @@
 <script lang="ts" setup>
-import { arrayOf, instanceOf } from "vue-types";
+import { arrayOf } from "vue-types";
 import ListItem from "./ListItem.vue";
-import { QaList } from "~/types";
 
 defineProps({
   list: arrayOf(ListItem),
-  qaList: instanceOf(QaList),
 });
 </script>
 <template>
@@ -20,9 +18,6 @@ defineProps({
         :price="item.price"
         :status="item.status"
       />
-      {{
-        qaList
-      }}
     </ul>
   </div>
 </template>
