@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ProductList from "../components/ProductList.vue";
+import ProductList from "../components/sample/ProductList.vue";
 
 const list = [
   {
