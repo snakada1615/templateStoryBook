@@ -11,6 +11,8 @@ setup((app) => {
   app.use(Quasar, {});
 });
 
+import "@quasar/extras/material-icons/material-icons.css";
+
 const preview: Preview = {
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },
