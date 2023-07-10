@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["nuxt-quasar-vite", "@vite-pwa/nuxt"],
+  modules: ["nuxt-quasar-vite", "@vite-pwa/nuxt", "@intlify/nuxt3"],
   quasar: {
     // Optional string | boolean
     sassVariables: "assets/quasar-variables.sass",
@@ -91,6 +91,13 @@ export default defineNuxtConfig({
     },
     icon: {
       source: "/assets/icon.png",
+    },
+  },
+  intlify: {
+    localeDir: "locales",
+    vueI18n: {
+      // You can setting same `createI18n` options here !
+      default_locale: "en",
     },
   },
 });
